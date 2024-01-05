@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 /*Declaring linklist structure>>>>>>>>>
 The typedef keyword is unnecessary for C struct types. The only advantage it gives you is that it creates a one-word name for the type.
@@ -52,6 +53,19 @@ enum ln_return {
 };
 
 typedef enum ln_return LLRet;
+
+#define LL_GUARD(cond, err, debug) \
+        if(cond) {\
+            printf("[%s ]\r\n", debug);\
+            return err; \
+        }
+
+#define DEBUG_LOG \
+    printf("[%s] [%d] \r\n", __FUNCTION__, __LINE__);        
+
+void print_ln(ln *node);  
+LLRet InsertNodeAtStart(ln **head, ln *new_node); 
+LLRet InsertNodeAtEnd(ln *head, ln *new_node);     
 
 
 
