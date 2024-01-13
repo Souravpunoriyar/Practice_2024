@@ -38,10 +38,13 @@ int main() {
      (BIT_ODD_EVEN(num)==1)?printf("ODD number \r\n"):printf("EVEN NUMBER \r\n");
      BIT_SWAP(num, 0,3);
      BIT_PRINT(num);
-     //num = rev_bit(num);
-     //BIT_PRINT(num);
+     num = rev_bit(num);
+     BIT_PRINT(num);
      BIT_REVERSE(num);
      BIT_PRINT(num);
+     BIT_SWAP_ENDIAN(num);
+     BIT_PRINT(num);
+
      
 
 
