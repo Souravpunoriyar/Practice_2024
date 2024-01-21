@@ -30,14 +30,18 @@ void rev_sent(char * str) {
     rev_word(&str[0], &str[(strlen(str)-1)]);
     printf("[%s] \r\n", str);
     int begin = 0;
+    int end = 0;
     for(int i =0 ; i < strlen(str); i++) {
         if((str[i] == ' ') || (str[i] == '\0')){
-            rev_word(&str[begin], &str[i-1]);
+            end = i;
+            rev_word(&str[begin], &str[end - 1]);
             begin = i+1;
         }
     }
     printf("[%s] \r\n", str);
 }
+
+
 
 
 
